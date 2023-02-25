@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>FlixTube: Home</title>
+        <title>FlixTube: Advertising</title>
 
         <link rel="stylesheet" href="css/tailwind.min.css">
         <link rel="stylesheet" href="css/app.css">
@@ -15,33 +15,27 @@
                     <div class="text-xl font-bold">
                         FlixTube
                     </div>
-                    <div class="ml-16 border-b-2 border-blue-600">
+                    <div class="ml-16">
                         <a href="/">Videos</a>
                     </div>
                     <div class="ml-4">
                         <a href="/upload">Upload</a>
                     </div>
-                    <div class="ml-4">
+                    <div class="ml-4 border-b-2 border-blue-600">
                         <a href="/history">History</a>
                     </div>
                     <div class="ml-4">
-                        <a href="/softarch-midterm/chapter-9/example-1/gateway/src/views/advertise.hbs">Advertising</a>
+                        <a href="/advertise">Advertising</a>
                     </div>
                 </div>
             </div>
 
             <div class="m-4">
-                <h1>Videos</h1>
-                <div id="video-list" class="m-4">
-                    {{#if videos}}
-                        {{#each videos}}
-                            <div class="mt-1">
-                                <a href="/video?id={{this._id}}">{{this.name}}</a> 
-                            </div>
-                        {{/each}}
-                    {{else}}
-                        No videos uploaded yet.
-                    {{/if}}
+	            <h1>Advertising Product</h1>
+                <div class="m-4">
+                    The following Advertising product: 
+                    {{product.name}}
+                    {{product.link}}
                 </div>
             </div>
         </div>

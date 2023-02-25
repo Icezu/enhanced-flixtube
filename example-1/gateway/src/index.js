@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const http = require("http");
+const products = require("fixtures/products")
 
 //
 // Setup event handlers.
@@ -83,6 +84,16 @@ function setupHandlers(app) {
     //
     app.get("/upload", (req, res) => {
         res.render("upload-video", {});
+    });
+
+    //
+    // Web page to display advertising
+    //
+    app.get("/advertise", (req, res) => {
+        // randomly choose the products in the array
+        const randomIndex = Math.floor(Math.random() * products.length);
+        const product = products[randomIndex];
+        res.render("advertise", { product });
     });
 
     //

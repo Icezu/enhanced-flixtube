@@ -177,3 +177,22 @@ services:
       - db
       - rabbit
     restart: "no"
+
+  advertising:
+    image: advertising
+    build:
+      context: ./advertising
+      dockerfile: Dockerfile-dev
+    container_name: advertising
+    ports: 
+    - "4007:80"
+    environment: 
+      - PORT=80
+      - RABBIT=amqp://guest:guest@rabbit:5672
+      - DBHOST=mongodb://db:27017
+      - DBNAME=advertising
+      - NODE_ENV=development
+    depends_on:
+      - db
+      - rabbit
+    restart: "no"
